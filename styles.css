@@ -1,0 +1,152 @@
+:root {
+  --bg: #f6f4ee;
+  --ink: #1f1f1f;
+  --brand: #0f766e;
+  --accent: #d97706;
+  --card: #fffef9;
+  --line: #d9d2c1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 5%, rgba(15, 118, 110, 0.13), transparent 36%),
+    radial-gradient(circle at 90% 20%, rgba(217, 119, 6, 0.18), transparent 40%),
+    linear-gradient(165deg, #fbfaf4 0%, #f4efe1 100%);
+  min-height: 100vh;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
+  opacity: 0.35;
+}
+
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4.5rem 1.25rem 2rem;
+}
+
+.kicker {
+  margin: 0;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 6vw, 4.2rem);
+  margin: 0.4rem 0 0.5rem;
+  line-height: 1.03;
+}
+
+.subtitle {
+  max-width: 64ch;
+  margin: 0;
+  font-size: 1.06rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.4rem;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, var(--brand), #155e75);
+  padding: 0.72rem 1.05rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.1rem;
+  box-shadow: 0 10px 28px rgba(54, 44, 12, 0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+}
+
+.card p {
+  margin-top: 0;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 1rem;
+  line-height: 1.45;
+}
+
+.guardrails,
+footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 0;
+}
+
+.guardrails {
+  margin-top: 0.75rem;
+}
+
+footer {
+  padding-bottom: 2.5rem;
+  color: #504a3f;
+}
+
+.fade-in,
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: enter 620ms ease forwards;
+}
+
+.reveal {
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+}
