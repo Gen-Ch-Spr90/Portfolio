@@ -1,69 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | RigFlow + LogiQ</title>
-    <meta
-      name="description"
-      content="Public-safe portfolio case studies for RigFlow and LogiQ, built for recruiter and interviewer review."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Space+Grotesk:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="noise" aria-hidden="true"></div>
-    <header class="hero fade-in">
-      <p class="kicker">Public Portfolio</p>
-      <h1>RigFlow + LogiQ</h1>
-      <p class="subtitle">
-        Logistics case studies designed for hiring review with strong confidentiality guardrails.
-      </p>
-      <a class="cta" href="README.md">Read Full Case Studies</a>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sprint Global Org profile: systems engineering and development work, current focus, and portfolio direction." />
+  <title>Sprint Global Org | Systems Engineer & Developer</title>
 
-    <main class="grid">
-      <article class="card reveal" style="--delay: 120ms">
-        <h2>RigFlow</h2>
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --surface: #ffffff;
+      --ink: #0d2233;
+      --muted: #526a79;
+      --line: #d5e2ea;
+      --brand: #0f766e;
+      --brand-deep: #0a5953;
+      --accent: #ffb454;
+      --hero: linear-gradient(130deg, #0d2233 0%, #0c3f55 64%, #0f766e 100%);
+      --shadow: 0 14px 38px -24px rgba(8, 26, 38, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(42rem 20rem at 10% -10%, rgba(15, 118, 110, 0.14), transparent 62%),
+        radial-gradient(38rem 19rem at 100% -12%, rgba(255, 180, 84, 0.14), transparent 62%),
+        var(--bg);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      width: min(1040px, 92%);
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      background: rgba(244, 248, 251, 0.92);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--brand);
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .links a:hover {
+      color: var(--ink);
+    }
+
+    .hero {
+      margin-top: 1.4rem;
+      padding: 2.6rem 2rem;
+      border-radius: 30px;
+      background: var(--hero);
+      color: #f7fcff;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 1.35rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy {
+      max-width: 62ch;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 16rem;
+      height: 16rem;
+      right: -5rem;
+      top: -4rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 180, 84, 0.45), rgba(255, 180, 84, 0));
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    h1 {
+      margin-top: 0.9rem;
+      font-family: "Baskerville", "Times New Roman", serif;
+      font-size: clamp(2rem, 5.4vw, 3.1rem);
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      max-width: 16ch;
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      max-width: 60ch;
+      color: #e4f5fc;
+    }
+
+    .hero-photo-card {
+      justify-self: end;
+      width: min(290px, 100%);
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.72rem;
+      box-shadow: 0 12px 24px -18px rgba(8, 26, 38, 0.45);
+      -webkit-backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-photo {
+      width: min(220px, 100%);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      border: 3px solid rgba(255, 255, 255, 0.38);
+      object-fit: cover;
+      background: #11394d;
+    }
+
+    .hero-photo-note {
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      color: #def3ff;
+      text-align: center;
+    }
+
+    .cta-row {
+      margin-top: 1.35rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .cta {
+      border-radius: 999px;
+      padding: 0.68rem 1rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 160ms ease;
+    }
+
+    .cta-main {
+      color: #0f3a4d;
+      background: #ffffff;
+    }
+
+    .cta-alt {
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      color: #ffffff;
+      background: rgba(13, 34, 51, 0.45);
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      margin-top: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 20px -20px rgba(8, 26, 38, 0.32);
+      scroll-margin-top: 86px;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .muted {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      max-width: 70ch;
+    }
+
+    .grid {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .tile {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.9rem;
+      background: #fcfeff;
+    }
+
+    .tile h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .tile p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .tech-list {
+      list-style: none;
+      display: grid;
+      gap: 0.35rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-links {
+      margin-top: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .contact-intro {
+      color: var(--muted);
+      max-width: 68ch;
+    }
+
+    .contact-quick {
+      margin-top: 0.9rem;
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-quick a {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 0.52rem 0.85rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .contact-email {
+      color: #0f3a4d;
+      background: #e8fbf8;
+      border: 1px solid #95ddd6;
+    }
+
+    .contact-phone {
+      color: #ffffff;
+      background: #0f766e;
+      border: 1px solid #0f766e;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f8fbfd;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0.45rem 0.75rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 1.5rem 0 2.2rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo-card {
+        justify-self: start;
+        width: min(250px, 84%);
+      }
+
+      section {
+        padding: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-row">
+      <a class="logo" href="#top">Reginald Ofori</a>
+      <div class="links">
+        <a href="#about-me">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="container hero">
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <span class="badge">Systems Engineer & Developer</span>
+        <h1>Building practical systems and products that perform in the real world.</h1>
         <p>
-          Full-stack logistics operations platform focused on reliability, traceability, and deployment readiness.
+          Reginald Ofori simplified profile for interviewers and collaborators.
+          It highlights delivered work, current focus, and the technical direction behind ongoing projects.
         </p>
-        <ul>
-          <li>Problem: fragmented dispatch, route, and maintenance workflows</li>
-          <li>Solution: unified mobile + backend operations model</li>
-          <li>Stack: Expo, React Native, Node.js, Express, TypeScript, Prisma</li>
-          <li>Strength: middleware-driven reliability and release discipline</li>
-        </ul>
-      </article>
+        <div class="cta-row">
+          <a class="cta cta-main" href="https://github.com/Gen-Ch-Spr90/Portfolio" target="_blank" rel="noopener noreferrer">View Portfolio Repository</a>
+          <a class="cta cta-alt" href="#contact">Reach Out</a>
+        </div>
+      </div>
 
-      <article class="card reveal" style="--delay: 220ms">
-        <h2>LogiQ</h2>
-        <p>
-          Mobile-first logistics product for driver and dispatch workflows with staged backend maturity.
-        </p>
-        <ul>
-          <li>Problem: fast mobile iteration versus backend consistency risk</li>
-          <li>Solution: staged architecture and readiness-based execution</li>
-          <li>Stack: Expo, React Native, React Navigation, API/auth modules</li>
-          <li>Strength: delivery speed with explicit launch-risk controls</li>
-        </ul>
-      </article>
-    </main>
+      <aside class="hero-photo-card" aria-label="Profile photo">
+        <img
+          class="hero-photo"
+          src="assets/reginald-ofori.jpg"
+          alt="Profile photo"
+        />
+        <p class="hero-photo-note">Reginald Ofori</p>
+      </aside>
+    </div>
+  </header>
 
-    <section class="guardrails reveal" style="--delay: 320ms">
-      <h3>What This Public Repo Excludes</h3>
-      <p>
-        No raw source code, secrets, internal docs, private architecture details, or deployment internals are published here.
+  <main class="container">
+    <section id="about-me">
+      <h2>About Me</h2>
+      <p class="muted">
+        Welcome to my page. I am Reginald Ofori, and this site gives interviewers a focused view of my systems engineering
+        approach, project execution style, and current technical direction.
       </p>
+      <div class="grid">
+        <article class="tile">
+          <h3>What I do</h3>
+          <p>Design and build full product flows from interface to backend and deployment-ready structure.</p>
+        </article>
+        <article class="tile">
+          <h3>What I optimize</h3>
+          <p>Performance, maintainability, and user clarity so software remains dependable as it grows.</p>
+        </article>
+        <article class="tile">
+          <h3>What I am targeting</h3>
+          <p>Systems engineering, platform engineering, and software roles with strong ownership scope.</p>
+        </article>
+        <article class="tile">
+          <h3>Education</h3>
+          <p><strong>Bachelor of Arts in Information Technology</strong></p>
+          <p>University of North Texas at Dallas | Dallas, TX</p>
+          <p>Coursework: Introduction to Java Programming, Data Structures and Algorithms, IT Project Management, Database and System Designs, Software Engineering.</p>
+        </article>
+      </div>
     </section>
 
-    <footer class="reveal" style="--delay: 420ms">
-      <p>For interviews: architecture trade-offs, reliability strategy, and scaling decisions available on request.</p>
-    </footer>
-  </body>
+    <section id="projects">
+      <h2>Current Portfolio Themes</h2>
+      <p class="muted">Work across logistics, emergency response support, hospitality, and service-based digital platforms.</p>
+      <div class="grid">
+        <article class="tile">
+          <h3>Logistics and operations</h3>
+          <p>Tracking, workflow visibility, and operational dashboards.</p>
+        </article>
+        <article class="tile">
+          <h3>Safety and assistance systems</h3>
+          <p>Fast action flows and high-priority response interfaces.</p>
+        </article>
+        <article class="tile">
+          <h3>Client-focused business websites</h3>
+          <p>Modern interfaces built to convert users and support growth.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack">
+      <h2>Right Tech Stack For This Site</h2>
+      <div class="grid">
+        <article class="tile">
+          <h3>Keep now</h3>
+          <ul class="tech-list">
+            <li>Semantic HTML and structured sections</li>
+            <li>Modern CSS with responsive layout</li>
+            <li>Small JavaScript only when needed</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Deploy</h3>
+          <ul class="tech-list">
+            <li>GitHub Pages hosting from main branch</li>
+            <li>Optional Cloudflare custom domain mapping</li>
+            <li>HTTPS served by GitHub Pages by default</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3>Mobile Development</h3>
+          <ul class="tech-list">
+            <li>SwiftUI for native iOS app interfaces</li>
+            <li>React Native for cross-platform delivery</li>
+            <li>REST API integration and push notifications</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact-intro">
+        For interview requests or role discussions, use direct email or phone below.
+      </p>
+
+      <div class="contact-quick">
+        <a class="contact-email" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">Email Reginald</a>
+        <a class="contact-phone" href="tel:+14694012097">Call +1 (469) 401-2097</a>
+      </div>
+
+      <div class="contact-links">
+        <a href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">Email</a>
+        <a href="tel:+14694012097">Phone</a>
+        <a href="https://www.linkedin.com/in/reginaldhkofori" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">reginaldoforidevs@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Sprint Global Org. Portfolio summary profile.
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        var targetId = this.getAttribute("href");
+        if (!targetId || targetId === "#") {
+          return;
+        }
+        var target = document.querySelector(targetId);
+        if (!target) {
+          return;
+        }
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", targetId);
+      });
+    });
+  </script>
+</body>
 </html>
