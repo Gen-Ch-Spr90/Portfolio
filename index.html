@@ -465,22 +465,22 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" data-email-user="reginaldoforidevs" data-email-domain="gmail.com">
       <h2>Contact</h2>
       <p class="contact-intro">
         For interview requests or role discussions, use direct email or phone below.
       </p>
 
       <div class="contact-quick">
-        <a class="contact-email" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">Email Reginald</a>
+        <a class="contact-email email-link" href="#contact">Email Reginald</a>
         <a class="contact-phone" href="tel:+14694012097">Call +1 (469) 401-2097</a>
       </div>
 
       <div class="contact-links">
-        <a href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">Email</a>
+        <a class="email-link" href="#contact">Email</a>
         <a href="tel:+14694012097">Phone</a>
         <a href="https://www.linkedin.com/in/reginaldhkofori" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">reginaldoforidevs@gmail.com</a>
+        <a class="email-link" href="#contact">Open Email Address</a>
       </div>
     </section>
   </main>
@@ -505,6 +505,28 @@
         history.replaceState(null, "", targetId);
       });
     });
+
+    // Generate email links at runtime to reduce straightforward scraper harvesting.
+    (function () {
+      var contactSection = document.getElementById("contact");
+      if (!contactSection) {
+        return;
+      }
+      var user = contactSection.getAttribute("data-email-user");
+      var domain = contactSection.getAttribute("data-email-domain");
+      if (!user || !domain) {
+        return;
+      }
+      var email = user + "@" + domain;
+      var subject = encodeURIComponent("Interview Inquiry from Portfolio");
+      var href = "mailto:" + email + "?subject=" + subject;
+      document.querySelectorAll(".email-link").forEach(function (link) {
+        link.setAttribute("href", href);
+        if (link.textContent && link.textContent.indexOf("Address") !== -1) {
+          link.textContent = email;
+        }
+      });
+    })();
   </script>
 </body>
 </html>
