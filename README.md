@@ -121,5 +121,4 @@ For each case study, I can walk through:
 
 ## Contact
 
-Use this portfolio repository as a starting point for interview discussion.
 Additional technical depth is available during live interviews.
