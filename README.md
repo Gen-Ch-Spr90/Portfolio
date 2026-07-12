@@ -111,14 +111,6 @@ This public repository intentionally excludes:
 
 If deeper technical review is needed, details can be shared in a controlled interview setting under appropriate confidentiality expectations.
 
-## Interview Discussion Topics
-
-For each case study, I can walk through:
-- architecture trade-offs and why specific technologies were selected
-- reliability decisions and failure-mode handling
-- scaling strategy and release-readiness criteria
-- lessons learned and what I would improve in the next iteration
-
 ## Contact
 
 Additional technical depth is available during live interviews.
