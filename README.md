@@ -7,7 +7,7 @@ It does **not** include source code, credentials, internal documentation, archit
 
 ## Why This Repository Exists
 
-Recruiters and interviewers often need a fast way to evaluate:
+This repository is designed to quickly show:
 - product thinking
 - technical depth
 - ability to deliver production-ready systems
@@ -118,26 +118,6 @@ For each case study, I can walk through:
 - reliability decisions and failure-mode handling
 - scaling strategy and release-readiness criteria
 - lessons learned and what I would improve in the next iteration
-
-## Role-Targeted Positioning
-
-### Backend-Heavy Roles
-- I build reliability-first service layers for operationally critical workflows.
-- I focus on API consistency, middleware safeguards, fault handling, and release gates.
-- Strongest examples here: RigFlow backend modularization, idempotency/tenant/audit controls, CI-driven readiness.
-
-### Mobile/Full-Stack Roles
-- I ship practical user workflows quickly while maintaining architecture discipline.
-- I align client behavior with evolving service contracts and reduce integration drift.
-- Strongest examples here: LogiQ driver/dispatch experiences and RigFlow cross-layer mobile-to-backend consistency.
-
-### Product-Minded Startup Roles
-- I translate product ambiguity into executable milestones with risk-aware technical plans.
-- I prioritize features by operational value, launch risk, and speed-to-feedback.
-- Strongest examples here: readiness-gap prioritization, staged architecture evolution, and launch-focused trade-off decisions.
-
-### 30-Second Interview Pitch
-I build logistics products that balance delivery speed with production reliability. Across RigFlow and LogiQ, I led architecture and implementation decisions spanning mobile workflows, service layers, and release-readiness controls, while protecting operational quality through reliability and security-focused engineering discipline.
 
 ## Contact
 
