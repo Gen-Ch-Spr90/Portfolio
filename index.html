@@ -459,15 +459,15 @@
       </p>
 
       <div class="contact-quick">
-        <a class="contact-email email-link" href="#contact">Email Reginald</a>
+          <a class="contact-email email-link" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">Email Reginald</a>
         <a class="contact-phone phone-link" href="#contact">Call Now</a>
       </div>
 
       <div class="contact-links">
-        <a class="email-link" href="#contact">Email</a>
+          <a class="email-link" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">Email</a>
         <a class="phone-link" href="#contact">Phone</a>
         <a href="https://www.linkedin.com/in/reginaldhkofori" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="email-link" href="#contact">Open Email Address</a>
+          <a class="email-link" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">reginaldoforidevs@gmail.com</a>
         <a class="phone-link" href="#contact">Open Phone Number</a>
       </div>
     </section>
@@ -503,8 +503,8 @@
       if (!contactSection) {
         return;
       }
-      var user = contactSection.getAttribute("data-email-user");
-      var domain = contactSection.getAttribute("data-email-domain");
+      var user = contactSection.dataset.emailUser;
+      var domain = contactSection.dataset.emailDomain;
       if (!user || !domain) {
         return;
       }
@@ -513,15 +513,15 @@
       var href = "mailto:" + email + "?subject=" + subject;
       document.querySelectorAll(".email-link").forEach(function (link) {
         link.setAttribute("href", href);
-        if (link.textContent && link.textContent.indexOf("Address") !== -1) {
+        if (link.textContent && link.textContent.includes("Address")) {
           link.textContent = email;
         }
       });
 
-      var country = contactSection.getAttribute("data-phone-country");
-      var area = contactSection.getAttribute("data-phone-area");
-      var prefix = contactSection.getAttribute("data-phone-prefix");
-      var line = contactSection.getAttribute("data-phone-line");
+      var country = contactSection.dataset.phoneCountry;
+      var area = contactSection.dataset.phoneArea;
+      var prefix = contactSection.dataset.phonePrefix;
+      var line = contactSection.dataset.phoneLine;
       if (!country || !area || !prefix || !line) {
         return;
       }
@@ -529,7 +529,7 @@
       var prettyPhone = "+" + country + " (" + area + ") " + prefix + "-" + line;
       document.querySelectorAll(".phone-link").forEach(function (link) {
         link.setAttribute("href", "tel:+" + digits);
-        if (link.textContent && link.textContent.indexOf("Number") !== -1) {
+        if (link.textContent && link.textContent.includes("Number")) {
           link.textContent = prettyPhone;
         }
       });
