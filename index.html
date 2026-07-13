@@ -459,7 +459,6 @@
       </p>
 
       <div class="contact-quick">
-        <a class="contact-email email-link" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">Email Reginald</a>
         <a class="contact-phone phone-link" href="#contact">Call Now</a>
       </div>
 
@@ -468,7 +467,6 @@
         <a class="phone-link" href="#contact">Phone</a>
         <a href="https://www.linkedin.com/in/reginaldhkofori" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a class="email-link" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">reginaldoforidevs@gmail.com</a>
-        <a class="phone-link" href="#contact">Open Phone Number</a>
       </div>
     </section>
   </main>
@@ -526,12 +524,8 @@
         return;
       }
       var digits = country + area + prefix + line;
-      var prettyPhone = "+" + country + " (" + area + ") " + prefix + "-" + line;
       document.querySelectorAll(".phone-link").forEach(function (link) {
         link.setAttribute("href", "tel:+" + digits);
-        if (link.textContent && link.textContent.includes("Number")) {
-          link.textContent = prettyPhone;
-        }
       });
     })();
   </script>
