@@ -460,7 +460,6 @@
 
       <div class="contact-quick">
         <a class="contact-email email-link" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">Email Reginald</a>
-        <button class="contact-copy copy-email-button" type="button">Copy Email</button>
         <a class="contact-phone phone-link" href="#contact">Call Now</a>
       </div>
 
@@ -469,10 +468,8 @@
         <a class="phone-link" href="#contact">Phone</a>
         <a href="https://www.linkedin.com/in/reginaldhkofori" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a class="email-link" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">reginaldoforidevs@gmail.com</a>
-        <button class="copy-email-button" type="button">Copy Address</button>
         <a class="phone-link" href="#contact">Open Phone Number</a>
       </div>
-      <p class="contact-note" aria-live="polite"></p>
     </section>
   </main>
 
@@ -514,57 +511,11 @@
       var email = user + "@" + domain;
       var subject = encodeURIComponent("Interview Inquiry from Portfolio");
       var href = "mailto:" + email + "?subject=" + subject;
-      var contactNote = contactSection.querySelector(".contact-note");
       document.querySelectorAll(".email-link").forEach(function (link) {
         link.setAttribute("href", href);
         if (link.textContent && link.textContent.includes("Address")) {
           link.textContent = email;
         }
-      });
-
-      function updateContactNote(message, isError) {
-        if (!contactNote) {
-          return;
-        }
-        contactNote.textContent = message;
-        contactNote.classList.toggle("is-error", Boolean(isError));
-      }
-
-      function copyText(value) {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          return navigator.clipboard.writeText(value);
-        }
-
-        return new Promise(function (resolve, reject) {
-          var input = document.createElement("textarea");
-          input.value = value;
-          input.setAttribute("readonly", "");
-          input.style.position = "absolute";
-          input.style.left = "-9999px";
-          document.body.appendChild(input);
-          input.select();
-
-          try {
-            document.execCommand("copy");
-            resolve();
-          } catch (error) {
-            reject(error);
-          } finally {
-            input.remove();
-          }
-        });
-      }
-
-      document.querySelectorAll(".copy-email-button").forEach(function (button) {
-        button.addEventListener("click", function () {
-          copyText(email)
-            .then(function () {
-              updateContactNote("Email address copied: " + email);
-            })
-            .catch(function () {
-              updateContactNote("Copy failed. Email me at " + email + ".", true);
-            });
-        });
       });
 
       var country = contactSection.dataset.phoneCountry;
