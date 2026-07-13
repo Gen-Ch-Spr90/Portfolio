@@ -444,29 +444,21 @@
       </div>
     </section>
 
-    <section
-      id="contact"
-      data-email-user="reginaldoforidevs"
-      data-email-domain="gmail.com"
-      data-phone-country="1"
-      data-phone-area="469"
-      data-phone-prefix="401"
-      data-phone-line="2097"
-    >
+    <section id="contact">
       <h2>Contact</h2>
       <p class="contact-intro">
         For interview requests or role discussions, use direct email or phone below.
       </p>
 
       <div class="contact-quick">
-        <a class="contact-phone phone-link" href="#contact">Call Now</a>
+        <a class="contact-phone" href="tel:+14694012097">Call Now</a>
       </div>
 
       <div class="contact-links">
-        <a class="email-link" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">Email</a>
-        <a class="phone-link" href="#contact">Phone</a>
+        <a href="mailto:reginaldoforidevs@gmail.com">Email</a>
+        <a href="tel:+14694012097">Phone</a>
         <a href="https://www.linkedin.com/in/reginaldhkofori" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="email-link" href="mailto:reginaldoforidevs@gmail.com?subject=Interview%20Inquiry%20from%20Portfolio">reginaldoforidevs@gmail.com</a>
+        <a href="mailto:reginaldoforidevs@gmail.com">reginaldoforidevs@gmail.com</a>
       </div>
     </section>
   </main>
@@ -495,39 +487,6 @@
       });
     });
 
-    // Generate email links at runtime to reduce straightforward scraper harvesting.
-    (function () {
-      var contactSection = document.getElementById("contact");
-      if (!contactSection) {
-        return;
-      }
-      var user = contactSection.dataset.emailUser;
-      var domain = contactSection.dataset.emailDomain;
-      if (!user || !domain) {
-        return;
-      }
-      var email = user + "@" + domain;
-      var subject = encodeURIComponent("Interview Inquiry from Portfolio");
-      var href = "mailto:" + email + "?subject=" + subject;
-      document.querySelectorAll(".email-link").forEach(function (link) {
-        link.setAttribute("href", href);
-        if (link.textContent && link.textContent.includes("Address")) {
-          link.textContent = email;
-        }
-      });
-
-      var country = contactSection.dataset.phoneCountry;
-      var area = contactSection.dataset.phoneArea;
-      var prefix = contactSection.dataset.phonePrefix;
-      var line = contactSection.dataset.phoneLine;
-      if (!country || !area || !prefix || !line) {
-        return;
-      }
-      var digits = country + area + prefix + line;
-      document.querySelectorAll(".phone-link").forEach(function (link) {
-        link.setAttribute("href", "tel:+" + digits);
-      });
-    })();
   </script>
 </body>
 </html>
