@@ -114,3 +114,6 @@ If deeper technical review is needed, details can be shared in a controlled inte
 ## Contact
 
 Additional technical depth is available during live interviews.
+
+
+
