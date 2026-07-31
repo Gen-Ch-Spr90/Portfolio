@@ -55,14 +55,30 @@ nav {
   padding: 0.9rem 0;
 }
 
-.logo {
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   text-decoration: none;
   color: var(--ink);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
-.logo span {
+.brand-logo {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 1rem;
+}
+
+.brand-accent {
   color: var(--brand);
 }
 
