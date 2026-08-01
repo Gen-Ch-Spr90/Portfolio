@@ -285,12 +285,8 @@ section h2 {
 
 .contact-form {
   margin-top: 0.9rem;
-  display: none;
-  gap: 0.8rem;
-}
-
-#contact:target .contact-form {
   display: grid;
+  gap: 0.8rem;
 }
 
 .form-grid {
