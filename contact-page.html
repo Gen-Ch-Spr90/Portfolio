@@ -7,9 +7,6 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <!--
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://formsubmit.co; img-src 'self' data:; style-src 'self'; font-src 'self' data:; connect-src 'none'; frame-src 'none'; media-src 'none'; manifest-src 'self'; worker-src 'none'; script-src 'self'; upgrade-insecure-requests; block-all-mixed-content" />
-  -->
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), local-fonts=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-create=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), web-share=(), xr-spatial-tracking=()" />
   <title>Contact | Sprint Global Org</title>
@@ -41,7 +38,8 @@
       <form class="contact-form" action="https://formsubmit.co/reginaldoforidevs@gmail.com" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="_subject" value="New message from portfolio" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="text" name="_honey" class="bot-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label class="visually-hidden" for="website">Leave this field blank</label>
+        <input id="website" type="text" name="_honey" class="bot-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <div class="form-grid">
           <label class="form-field">
