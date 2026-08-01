@@ -379,12 +379,6 @@ section h2 {
   pointer-events: none;
 }
 
-.contact-note {
-  margin-top: 0.35rem;
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-
 .contact-fallback {
   margin-top: 0.95rem;
   border: 1px solid var(--line);
