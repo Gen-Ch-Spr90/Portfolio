@@ -7,7 +7,9 @@
   }
 
   copyBtn.addEventListener('click', function () {
-    var email = copyBtn.getAttribute('data-email') || '';
+    var emailUser = copyBtn.getAttribute('data-email-user') || '';
+    var emailDomain = copyBtn.getAttribute('data-email-domain') || '';
+    var email = emailUser && emailDomain ? emailUser + '@' + emailDomain : '';
     if (!email) {
       feedback.textContent = 'Email is unavailable right now.';
       return;
