@@ -1,0 +1,16 @@
+name = "portfolio-contact-worker"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+workers_dev = true
+
+# Route this Worker to your portfolio domain path.
+# You can also configure this in Cloudflare dashboard instead of here.
+routes = [
+  { pattern = "portfolio.sprintglobal.org/api/contact", zone_name = "sprintglobal.org" }
+]
+
+[vars]
+TO_EMAIL = "reginaldoforidevs@gmail.com"
+FROM_EMAIL = "no-reply@portfolio.sprintglobal.org"
+SUBJECT_PREFIX = "[Portfolio Contact]"
+ALLOWED_ORIGINS = "https://portfolio.sprintglobal.org,http://localhost:5500,http://127.0.0.1:5500"

@@ -15,3 +15,5 @@
 !favicon.ico
 !assets/
 !assets/**
+!cloudflare/
+!cloudflare/**

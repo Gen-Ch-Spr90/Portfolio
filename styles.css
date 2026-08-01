@@ -354,6 +354,11 @@ section h2 {
   gap: 0.65rem;
 }
 
+.contact-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
 .contact-cancel {
   border: 1px solid var(--line);
   background: #ffffff;
@@ -447,6 +452,25 @@ section h2 {
   margin-top: 0.55rem;
   font-size: 0.83rem;
   color: var(--muted);
+}
+
+.form-feedback {
+  min-height: 1.1rem;
+  margin-top: 0.2rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.form-feedback.is-pending {
+  color: #0a5953;
+}
+
+.form-feedback.is-success {
+  color: #0a6f49;
+}
+
+.form-feedback.is-error {
+  color: #9d2d2d;
 }
 
 footer {
