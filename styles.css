@@ -416,6 +416,28 @@ section h2 {
   padding: 0.45rem 0.75rem;
 }
 
+.contact-copy {
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #f8fbfd;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+.contact-copy:hover {
+  background: #f1f7fb;
+}
+
+.copy-feedback {
+  margin-top: 0.55rem;
+  font-size: 0.83rem;
+  color: var(--muted);
+}
+
 footer {
   text-align: center;
   color: var(--muted);

@@ -7,7 +7,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://formsubmit.co; img-src 'self' data:; style-src 'self'; font-src 'self' data:; connect-src 'none'; frame-src 'none'; media-src 'none'; manifest-src 'self'; worker-src 'none'; script-src 'none'; upgrade-insecure-requests; block-all-mixed-content" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://formsubmit.co; img-src 'self' data:; style-src 'self'; font-src 'self' data:; connect-src 'none'; frame-src 'none'; media-src 'none'; manifest-src 'self'; worker-src 'none'; script-src 'self'; upgrade-insecure-requests; block-all-mixed-content" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), local-fonts=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-create=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), web-share=(), xr-spatial-tracking=()" />
   <title>Contact | Sprint Global Org</title>
@@ -36,10 +36,9 @@
       </p>
 
       <form class="contact-form" action="https://formsubmit.co/reginaldoforidevs@gmail.com" method="POST" accept-charset="UTF-8">
-        <input type="hidden" name="_subject" value="Portfolio Contact Request" />
-        <input type="hidden" name="_next" value="https://portfolio.sprintglobal.org/success.html" />
-        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_subject" value="New message from portfolio" />
         <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" class="bot-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <div class="form-grid">
           <label class="form-field">
@@ -78,10 +77,11 @@
         <h3>Fallback Contact</h3>
         <p>If the form does not submit for any reason, contact me directly:</p>
         <div class="contact-links">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=reginaldoforidevs@gmail.com" target="_blank" rel="noopener noreferrer">Email Directly</a>
+          <button class="contact-copy" id="copy-email-btn" type="button" data-email="reginaldoforidevs@gmail.com">Copy Email</button>
           <a href="tel:+14694012097">(469) 401-2097</a>
           <a href="https://www.linkedin.com/in/reginaldhkofori" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
+        <p class="copy-feedback" id="copy-feedback" aria-live="polite"></p>
       </div>
     </section>
   </main>
@@ -89,5 +89,6 @@
   <footer>
     © 2026 Sprint Global Org. Portfolio summary profile.
   </footer>
+  <script src="contact.js" defer></script>
 </body>
 </html>
