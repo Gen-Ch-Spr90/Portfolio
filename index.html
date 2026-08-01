@@ -116,42 +116,54 @@
 
       <form class="contact-form" action="https://formsubmit.co/reginaldoforidevs@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Portfolio Contact Request" />
-        <input type="hidden" name="_next" value="https://gen-ch-spr90.github.io/Portfolio/#contact" />
+        <input type="hidden" name="_next" value="https://gen-ch-spr90.github.io/Portfolio/success.html" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="true" />
         <input type="text" name="_honey" class="bot-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <div class="form-grid">
           <label class="form-field">
-            <span>Name</span>
-            <input type="text" name="name" required maxlength="80" placeholder="Your name" />
+            <span>First Name</span>
+            <input type="text" name="first_name" required maxlength="40" placeholder="First name" />
+          </label>
+
+          <label class="form-field">
+            <span>Last Name</span>
+            <input type="text" name="last_name" required maxlength="40" placeholder="Last name" />
           </label>
 
           <label class="form-field">
             <span>Email</span>
             <input type="email" name="email" required maxlength="120" placeholder="you@email.com" />
           </label>
+
+          <label class="form-field">
+            <span>Phone</span>
+            <input type="tel" name="phone" maxlength="30" placeholder="(469) 401-2097" />
+          </label>
         </div>
 
-        <label class="form-field">
+        <label class="form-field form-field-full">
           <span>Message</span>
           <textarea name="message" required maxlength="2000" rows="6" placeholder="Tell me about the role or project."></textarea>
         </label>
 
-        <button class="contact-submit" type="submit">Send Message</button>
+        <div class="contact-actions">
+          <button class="contact-submit" type="submit">Send Message</button>
+          <button class="contact-cancel" type="reset">Cancel</button>
+        </div>
       </form>
 
       <p class="contact-note">Anti-spam is enabled with CAPTCHA and a hidden bot trap field.</p>
 
-      <div class="contact-quick">
-        <a class="contact-phone" href="tel:+14694012097">Call Now</a>
-      </div>
-
-      <div class="contact-links">
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=reginaldoforidevs@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
-        <a href="tel:+14694012097">Phone</a>
-        <a href="https://www.linkedin.com/in/reginaldhkofori" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/Gen-Ch-Spr90/Portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <div class="contact-fallback" role="note" aria-label="Fallback contact methods">
+        <h3>Fallback Contact</h3>
+        <p>If the form does not submit for any reason, contact me directly:</p>
+        <div class="contact-links">
+          <a href="mailto:reginaldoforidevs@gmail.com">Email Directly</a>
+          <a href="tel:+14694012097">Call Directly</a>
+          <a href="https://www.linkedin.com/in/reginaldhkofori" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
       </div>
     </section>
   </main>

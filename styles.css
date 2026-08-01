@@ -278,13 +278,6 @@ section h2 {
   font-size: 0.92rem;
 }
 
-.contact-links {
-  margin-top: 0.85rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
-
 .contact-intro {
   color: var(--muted);
   max-width: 68ch;
@@ -305,6 +298,10 @@ section h2 {
 .form-field {
   display: grid;
   gap: 0.35rem;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
 }
 
 .form-field span {
@@ -335,7 +332,6 @@ section h2 {
 }
 
 .contact-submit {
-  justify-self: start;
   border: 1px solid #0f766e;
   background: #0f766e;
   color: #ffffff;
@@ -350,6 +346,28 @@ section h2 {
 .contact-submit:hover {
   background: #0a5953;
   border-color: #0a5953;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.contact-cancel {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.58rem 1rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contact-cancel:hover {
+  background: #f3f8fb;
 }
 
 .bot-field {
@@ -367,31 +385,30 @@ section h2 {
   color: var(--muted);
 }
 
-.contact-quick {
-  margin-top: 0.9rem;
+.contact-fallback {
+  margin-top: 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.85rem;
+  background: #fbfdff;
+}
+
+.contact-fallback h3 {
+  font-size: 0.96rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact-fallback p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-bottom: 0.55rem;
+}
+
+.contact-links {
+  margin-top: 0.1rem;
   display: flex;
   gap: 0.65rem;
   flex-wrap: wrap;
-}
-
-.contact-quick a {
-  text-decoration: none;
-  border-radius: 999px;
-  padding: 0.52rem 0.85rem;
-  font-weight: 700;
-  font-size: 0.88rem;
-}
-
-.contact-email {
-  color: #0f3a4d;
-  background: #e8fbf8;
-  border: 1px solid #95ddd6;
-}
-
-.contact-phone {
-  color: #ffffff;
-  background: #0f766e;
-  border: 1px solid #0f766e;
 }
 
 .contact-links a {
@@ -410,6 +427,41 @@ footer {
   color: var(--muted);
   font-size: 0.85rem;
   padding: 1.5rem 0 2.2rem;
+}
+
+.success-wrap {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 2.2rem 0;
+}
+
+.success-card {
+  width: min(660px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 1.6rem;
+}
+
+.success-card h1 {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  margin-bottom: 0.55rem;
+  max-width: 100%;
+  color: var(--ink);
+}
+
+.success-card p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+  max-width: 54ch;
+}
+
+.success-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 760px) {
@@ -432,5 +484,9 @@ footer {
 
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .success-card {
+    padding: 1.2rem;
   }
 }
