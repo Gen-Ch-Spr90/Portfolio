@@ -172,6 +172,24 @@
   </ul>
   <p><a href="https://github.com/Gen-Ch-Spr90/clinical-rag-platform" target="_blank">View on GitHub →</a></p>
 </article>
+
+        <article class="tile">
+  <h3>Clinical Triage + RAG Integration</h3>
+  <p class="muted">Java · Spring Boot · Multi-service · RAG · OpenAI · PostgreSQL + pgvector</p>
+  <p>Two Spring Boot services talking over HTTP. The Triage API scores patients on eight clinical factors and ranks them by severity tier, then calls the RAG platform with the top-ranked patient's full clinical picture. The RAG platform embeds the question, retrieves the most relevant clinical note from pgvector (HNSW cosine index), builds a citation-grounded prompt, and returns a cited clinical recommendation. Combined response includes ranked patients plus an answer sourced from the trauma note.</p>
+  <ul class="tech-list">
+    <li>Triage API — rule-based multi-factor scoring, PriorityQueue, RestClient</li>
+    <li>RAG platform — pgvector + HNSW, OpenAI embeddings, GPT-4o-mini</li>
+    <li>End-to-end response: ranked patients + cited clinical guidance</li>
+    <li>Retrieval distance 0.28 (trauma query) — tight semantic match</li>
+    <li>42 tests across both services — JUnit 5, Testcontainers</li>
+  </ul>
+  <p>
+    <a href="https://github.com/Gen-Ch-Spr90/patient-triage-api" target="_blank">Triage API →</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Gen-Ch-Spr90/clinical-rag-platform" target="_blank">RAG Platform →</a>
+  </p>
+</article>
         
       </div>
     </section>
